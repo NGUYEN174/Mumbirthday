@@ -1,0 +1,535 @@
+/* Đổi màu / font ở đây */
+:root {
+    --bg: #f7f1e5;
+    --ink: #4a3b2c;
+    --soft: #8a7762;
+    --gold: #c9a14a;
+    --sage: #dfe6d3;
+    --paper: #fffdf7;
+    --sans: 'Be Vietnam Pro', system-ui, sans-serif;
+    --serif: 'Lora', Georgia, serif;
+    --hand: 'Dancing Script', 'Segoe Script', cursive
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 300 clamp(17px, 4.6vw, 20px)/1.8 var(--sans);
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%
+}
+
+body.locked {
+    overflow: hidden;
+    height: 100svh
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .5;
+    background: radial-gradient(120% 80% at 50% 0, #fffaf0, transparent 70%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+}
+
+h1,
+h2,
+.hand {
+    font-weight: 500
+}
+
+h2 {
+    font: 500 clamp(26px, 7.4vw, 38px)/1.35 var(--serif)
+}
+
+.hand {
+    font-family: var(--hand);
+    font-size: clamp(32px, 9vw, 44px);
+    line-height: 1.3
+}
+
+.big {
+    font-size: clamp(36px, 10vw, 50px)
+}
+
+.huge {
+    font-size: clamp(44px, 12vw, 64px)
+}
+
+.soft {
+    color: var(--soft);
+    font-family: var(--serif);
+    font-style: italic
+}
+
+.btn {
+    font: 400 1rem var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: .85em 2.4em;
+    min-height: 48px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(120, 90, 40, .12);
+    transition: transform .4s, box-shadow .4s
+}
+
+.btn:active {
+    transform: scale(.97)
+}
+
+:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px
+}
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 24px;
+    text-align: center
+}
+
+.date {
+    font: 400 clamp(54px, 18vw, 92px)/1 var(--serif);
+    letter-spacing: .06em;
+    color: var(--gold)
+}
+
+#intro h1 {
+    font-size: clamp(44px, 13vw, 64px)
+}
+
+#glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 140vmax;
+    height: 140vmax;
+    margin: -70vmax;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 226, 150, .85), transparent 60%);
+    opacity: 0;
+    transform: scale(.1);
+    pointer-events: none
+}
+
+.a1,
+.a2,
+.a3,
+.a4 {
+    opacity: 0;
+    animation: up 2s ease forwards
+}
+
+.a1 {
+    animation-delay: .3s
+}
+
+.a2 {
+    animation-delay: 1.6s
+}
+
+.a3 {
+    animation-delay: 3s
+}
+
+.a4 {
+    animation-delay: 4.4s;
+    margin-top: 1rem
+}
+
+#intro.opening #glow {
+    animation: glow 2s ease forwards
+}
+
+#intro.gone {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.6s ease .6s, visibility 0s 2.2s
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(14px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes glow {
+    40% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1)
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1
+}
+
+.scene {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    padding: 16svh 28px;
+    text-align: center
+}
+
+.scene>* {
+    max-width: 30rem
+}
+
+.warm {
+    background: linear-gradient(var(--bg), #f3e4c4 25%, #f3e4c4 80%, var(--bg))
+}
+
+.gap {
+    height: 18svh
+}
+
+[data-r] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 1.8s ease, transform 1.8s ease
+}
+
+[data-r].in {
+    opacity: 1;
+    transform: none
+}
+
+.write.in {
+    animation: wipe 2.6s ease .3s both
+}
+
+@keyframes wipe {
+    from {
+        clip-path: inset(0 100% 0 0)
+    }
+
+    to {
+        clip-path: inset(0)
+    }
+}
+
+.tl {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    border-left: 1px solid var(--gold);
+    margin-left: 8px
+}
+
+.tl li {
+    position: relative;
+    padding-left: 1.6rem
+}
+
+.tl li::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: .7em;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold)
+}
+
+.tl b {
+    display: block;
+    font: 500 1.15rem var(--serif)
+}
+
+.tl span {
+    color: var(--soft)
+}
+
+#gallery[data-empty] {
+    min-height: 0;
+    padding: 0
+}
+
+#gallery[data-empty]>* {
+    display: none
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    width: 100%;
+    max-width: 30rem
+}
+
+figure {
+    background: #fff;
+    padding: 8px 8px 6px;
+    border-radius: 3px;
+    box-shadow: 0 6px 18px rgba(80, 60, 30, .12);
+    transform: rotate(-2deg)
+}
+
+figure:nth-child(even) {
+    transform: rotate(2deg) translateY(14px)
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    background: var(--sage)
+}
+
+figcaption {
+    font: 500 1.15rem/1.8 var(--hand);
+    color: var(--soft)
+}
+
+figure.ph img {
+    visibility: hidden
+}
+
+.fold {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 1.8s ease;
+    width: 100%
+}
+
+.fold.open {
+    grid-template-rows: 1fr
+}
+
+.fold>div {
+    overflow: hidden;
+    min-height: 0
+}
+
+.paper {
+    background: var(--paper);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(80, 60, 30, .14);
+    padding: 34px 24px 20px;
+    text-align: left;
+    font-size: 17px;
+    line-height: 34px;
+    background-image: repeating-linear-gradient(transparent 0 33px, rgba(150, 120, 70, .12) 33px 34px);
+    margin: 6px 0
+}
+
+.paper p {
+    margin-bottom: 34px;
+    opacity: 0
+}
+
+.fold.open .paper p {
+    animation: up 1.6s ease both;
+    animation-delay: calc(var(--i)*.45s + .8s)
+}
+
+.sign {
+    text-align: right;
+    font-size: 30px;
+    line-height: 34px
+}
+
+#cake {
+    width: min(78vw, 300px);
+    height: auto;
+    overflow: visible
+}
+
+#flame {
+    cursor: pointer;
+    transition: opacity 1s
+}
+
+#flame .fl {
+    transform-origin: 130px 52px;
+    animation: flick 1.8s ease-in-out infinite
+}
+
+@keyframes flick {
+    50% {
+        transform: scale(.94, 1.06) rotate(2deg)
+    }
+}
+
+.out #flame {
+    opacity: 0;
+    pointer-events: none
+}
+
+.out #hint,
+.out #blow {
+    display: none
+}
+
+#wish {
+    display: grid;
+    gap: .6rem;
+    min-height: 18rem
+}
+
+.w {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 1.6s ease, transform 1.6s ease
+}
+
+.w.on {
+    opacity: 1;
+    transform: none
+}
+
+#music {
+    position: fixed;
+    z-index: 30;
+    right: 14px;
+    top: calc(12px + env(safe-area-inset-top));
+    font: 400 .85rem var(--sans);
+    min-height: 40px;
+    padding: 0 14px;
+    color: var(--soft);
+    background: rgba(255, 253, 247, .85);
+    border: 1px solid #e3d6b8;
+    border-radius: 999px;
+    cursor: pointer
+}
+
+#music[aria-pressed=true] {
+    color: var(--ink);
+    border-color: var(--gold)
+}
+
+#music[hidden] {
+    display: none
+}
+
+#petals {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden
+}
+
+.petal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 13px;
+    border-radius: 70% 0 70% 0;
+    opacity: 0;
+    animation: fall linear infinite;
+    will-change: transform
+}
+
+@keyframes fall {
+    0% {
+        transform: translate3d(0, -6vh, 0) rotate(0);
+        opacity: 0
+    }
+
+    10% {
+        opacity: .7
+    }
+
+    90% {
+        opacity: .4
+    }
+
+    100% {
+        transform: translate3d(var(--dx), 106vh, 0) rotate(500deg);
+        opacity: 0
+    }
+}
+
+@media(min-width:760px) {
+    .scene>* {
+        max-width: 34rem
+    }
+
+    .grid {
+        max-width: 34rem
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        animation: none !important;
+        transition: none !important
+    }
+
+    [data-r],
+    .w,
+    .paper p,
+    .a1,
+    .a2,
+    .a3,
+    .a4 {
+        opacity: 1;
+        transform: none
+    }
+}
+
+/* Trang trí ảnh trong bức thư */
+.paper .letter-photo {
+    text-align: center;
+    margin: 20px 0 34px;
+}
+
+.paper .letter-photo img {
+    max-width: 85%;
+    width: 280px;
+    height: auto;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 8px;
+    box-shadow: 0 6px 18px rgba(80, 60, 30, 0.15);
+    transform: rotate(-1.5deg);
+    /* Hơi nghiêng nhẹ như tấm ảnh thật kẹp vào thư */
+    transition: transform 0.3s ease;
+}
+
+.paper .letter-photo img:hover {
+    transform: rotate(0deg) scale(1.02);
+}

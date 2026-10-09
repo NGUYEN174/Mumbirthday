@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Một lời nhỏ gửi Mẹ</title>
+  <meta name="theme-color" content="#f7f1e5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Dancing+Script:wght@500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="locked">
+  <div id="petals" aria-hidden="true"></div>
+  <button id="music" type="button" hidden aria-pressed="false">♫ Music</button>
+
+  <!-- MÀN HÌNH ĐẦU -->
+  <section id="intro">
+    <div id="glow" aria-hidden="true"></div>
+    <p class="a1 date">9.10</p>
+    <h1 class="a2 hand">Mẹ ơi...</h1>
+    <p class="a3">Con có một món quà nhỏ dành cho mẹ.</p>
+    <button id="open" class="a4 btn" type="button">Mở quà</button>
+  </section>
+
+  <main>
+    <!-- NGÀY XƯA -->
+    <section class="scene">
+      <h2 data-r>Có một người từng rất nghiêm với con.</h2>
+      <p data-r>Hồi con còn chưa vào lớp một, người đã bắt con tập viết, đó là mẹ.</p>
+      <p data-r>Có những hôm con khó chịu đến phát khóc, nhưng không thể nào thoát khỏi tay mẹ, cứ thế vừa viết vừa thét
+        lên:
+        :</p>
+      <p class="hand big write" data-r data-d=".4">“Sao mà mệt cái tay quá!”</p>
+      <p data-r>Lúc đó thật lòng con tức mẹ lắm! Bắt ép con, làm khó con.
+      </p>
+      <p class="soft" data-r>Nhưng bây giờ con đã biết là vì mẹ muốn con ăn học nên người.</p>
+      <p data-r>Nhờ những ngày tháng ấy mà con đã có hành trang để bước tiếp trên con đường học vấn.
+      </p>
+    </section>
+
+    <!-- LỚN LÊN -->
+    <section class="scene">
+      <h2 data-r>Rồi con lớn.</h2>
+      <ol class="tl">
+        <li data-r><b>Tiểu học</b><span>Những nét chữ đầu tiên, những buổi học thêm cô Nhi đầu làng.</span></li>
+        <li data-r><b>Cấp 2</b><span>Dần được thầy cô yêu mến.</span></li>
+        <li data-r><b>Cấp 3</b><span>Từng là học sinh giỏi nhất làng trong bè bạn.<br />Từng nghĩ là mình có thể làm
+            được rất nhiều thứ.</span></li>
+        <li data-r><b>Đại học</b><span>Thế mà con lại mông lung giữa dòng đời vội vàng xa hương. Con có nhiều áp lực vô
+            hình, đúng thật con đã sợ, sợ rằng không thành tài như mẹ mong!
+          </span></li>
+      </ol>
+      <p data-r>Nhưng dù thế nào, con cũng mong mẹ ủng hộ con, con sẽ cố gắng tìm con đường của mình.</p>
+    </section>
+
+    <!-- ẢNH (tự ẩn nếu chưa có ảnh. Thêm ?demo vào link để xem khung trống) -->
+    <section id="gallery" class="scene" data-empty>
+      <h2 data-r>Những năm tháng bình thường</h2>
+      <div class="grid">
+        <figure data-r><img
+            data-src="C:\Users\ASUS-PRO\Downloads\qua-sinh-nhat-me\qua-sinh-nhat-me\assets\images\Me.jpg" alt="Mẹ">
+          <figcaption>Mẹ</figcaption>
+        </figure>
+        <figure data-r data-d=".2"><img
+            data-src="C:\Users\ASUS-PRO\Downloads\qua-sinh-nhat-me\qua-sinh-nhat-me\assets\images\2mecon.jpg"
+            alt="Hai mẹ con">
+          <figcaption>Hai mẹ con</figcaption>
+        </figure>
+        <figure data-r><img
+            data-src="C:\Users\ASUS-PRO\Downloads\qua-sinh-nhat-me\qua-sinh-nhat-me\assets\images\Congio.jpg"
+            alt="Gia đình">
+          <figcaption>Con bây giờ</figcaption>
+        </figure>
+        <figure data-r data-d=".2"><img
+            data-src="C:\Users\ASUS-PRO\Downloads\qua-sinh-nhat-me\qua-sinh-nhat-me\assets\images\Connho.jpg"
+            alt="Con hồi nhỏ">
+          <figcaption>Con hồi nhỏ</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CỐ GẮNG -->
+    <section class="scene">
+      <h2 data-r>Con cố gắng.</h2>
+      <p class="soft" data-r>Vì con có một điều muốn làm...</p>
+      <p data-r>Con muốn một ngày nào đó...</p>
+      <p data-r>...ba mẹ không còn phải vất vả nữa.</p>
+      <p data-r>...con có thể đưa ba mẹ đi đây đó.</p>
+      <p data-r>...và mẹ có thể sống thật an nhàn.</p>
+    </section>
+
+    <!-- ĐIỀU MUỐN NÓI -->
+    <section class="scene warm">
+      <h2 class="hand huge" data-r>Thôi hôm nay...</h2>
+      <p data-r>Con không muốn nói về tương lai.</p>
+      <p data-r>Không muốn nói về thành tích.</p>
+      <p data-r>Không muốn nói về tiền.</p>
+      <p data-r>Bây giờ con chỉ muốn nói...</p>
+      <div class="gap"></div>
+      <p class="hand huge" data-r data-d=".6">Cảm ơn mẹ.</p>
+      <p data-r>Cảm ơn vì đã luôn lo cho con.</p>
+      <p data-r>Cảm ơn vì đã luôn muốn con có một tương lai tốt hơn.</p>
+      <p data-r>Cảm ơn vì dù con lớn rồi, mẹ vẫn luôn là mẹ của con.</p>
+    </section>
+
+    <!-- THƯ -->
+    <section class="scene">
+      <h2 data-r>Gửi mẹ</h2>
+      <button id="openLetter" class="btn" type="button" data-r>Mở thư</button>
+      <div id="letter" class="fold">
+        <div>
+          <article class="paper">
+            <p>Mẹ à,</p>
+            <p>Con không biết sau này con sẽ trở thành người như thế nào.</p>
+            <p>Con cũng chưa biết bao giờ con mới có thể làm được những điều con muốn cho gia đình.</p>
+            <p>Nhưng con sẽ cố gắng.</p>
+            <p>Con chỉ mong một ngày nào đó mẹ không cần phải lo cho con nhiều nữa.</p>
+            <p>Con muốn mẹ được vui.<br>Được đi chơi.<br>Được nghỉ ngơi.<br>Được sống những ngày thật bình yên.</p>
+            <p>Còn hôm nay, con chỉ muốn mẹ biết rằng:</p>
+            <p>Con biết ơn mẹ rất nhiều.</p>
+            <p>Chúc mẹ sinh nhật vui vẻ.<br>Mong mẹ luôn khỏe mạnh, vui vẻ và bình yên.</p>
+            <p>Con yêu mẹ.</p>
+            <p>Dù con có lúc cải mẹ, giận mẹ gần đây, nhưng cũng vì con cx muốn lo cho gia đình, lo cho tương lai nên
+              mới vậy, con không phải ích kĩ hay bất hiểu gì với ba mẹ nên mẹ hãy hiểu cho con nhé.</p>
+            <p class="letter-photo">
+              <img src="assets/images/2mecon2.jpg" alt="Hai mẹ con">
+            </p>
+            <p class="sign hand">— Con của mẹ</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÁNH -->
+    <section id="finale" class="scene">
+      <h2 data-r>Chúc mừng sinh nhật Mẹ</h2>
+      <svg id="cake" viewBox="0 0 260 250" role="img" aria-label="Bánh sinh nhật có một cây nến">
+        <defs>
+          <radialGradient id="gl">
+            <stop offset="0" stop-color="#ffd978" stop-opacity=".7" />
+            <stop offset="1" stop-color="#ffd978" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="130" cy="226" rx="112" ry="10" fill="#e6dcc6" />
+        <rect x="40" y="150" width="180" height="72" rx="14" fill="#f1e3c6" />
+        <rect x="70" y="106" width="120" height="48" rx="12" fill="#fffaf0" />
+        <path d="M40 164c15 12 25-6 40 4s25-8 40 2 25-8 40 2 25-8 40 2 15-4 20-6v-14H40z" fill="#fffaf0" />
+        <rect x="126" y="62" width="8" height="44" rx="3" fill="#d9c28f" />
+        <circle cx="130" cy="188" r="0" />
+        <text x="130" y="198" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-size="13"
+          fill="#7a6247">Chúc mừng sinh nhật Mẹ</text>
+        <circle cx="70" cy="214" r="4" fill="#cfd9bd" />
+        <circle cx="190" cy="214" r="4" fill="#cfd9bd" />
+        <g id="flame" role="button" tabindex="0" aria-label="Thổi tắt nến">
+          <circle cx="130" cy="44" r="40" fill="url(#gl)" />
+          <circle cx="130" cy="42" r="28" fill="transparent" />
+          <path class="fl" d="M130 24c9 11 11 18 0 28-11-10-9-17 0-28z" fill="#f4b942" />
+          <path class="fl" d="M130 36c4 5 5 8 0 13-5-5-4-8 0-13z" fill="#fff3c4" />
+        </g>
+      </svg>
+      <p id="hint" class="soft">Chạm vào ngọn nến, hoặc bấm nút bên dưới.</p>
+      <button id="blow" class="btn" type="button">Thổi nến</button>
+      <div id="wish" aria-live="polite">
+        <p class="w">Điều ước của con dành cho mẹ...</p>
+        <p class="w hand huge">Vui vẻ.</p>
+        <p class="w hand huge">Khỏe mạnh.</p>
+        <p class="w hand huge">Bình yên.</p>
+        <p class="w">Và thật nhiều ngày tháng hạnh phúc.</p>
+      </div>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
